@@ -1,9 +1,16 @@
-let username = 'xiaomi';
-console.log(username);
-let a = 12;
-let b = 6;
-let c = 2;
-console.log(a / b);
-console.log(c * b);
+let myName = 'Will';
+let meaningOfLife;
+let isLoading;
+let album;
+myName = 'Eason';
+meaningOfLife = 4;
+isLoading = true;
+album = 33;
+const sum = (a, b) => {
+    return a + b;
+};
+let postId;
+let isActive;
+let re = /\w+/g;
 export {};
 //# sourceMappingURL=main.js.map
