@@ -223,16 +223,46 @@ const walk = (str: Direction) => {
 
 // console.log(p1.getFullInfo());
 
-class Person {
-  constructor(
-    public name: string,
-    public readonly age: number,
-    private IdCard: string
-  ) {}
+// class Person {
+//   constructor(
+//     public name: string,
+//     public readonly age: number,
+//     private IdCard: string
+//   ) {}
+// }
+
+// const p1 = new Person('eason', 5, 'asdfasdfasdf1213');
+
+// console.log(p1);
+// p1.name = 'will';
+// console.log(p1);
+
+abstract class Package {
+  constructor(public weight: number) {}
+  abstract calculate(): number;
+  printPackage() {
+    console.log(
+      `the parcel is ${this.weight} kg, the fee is ${this.calculate()} dollars`
+    );
+  }
 }
 
-const p1 = new Person('eason', 5, 'asdfasdfasdf1213');
+class StandardPackage extends Package {
+  constructor(
+    weight: number,
+    public unitPrice: number,
+    public additionalPrice: number
+  ) {
+    super(weight);
+  }
+  calculate(): number {
+    if (this.weight > 10) {
+      return 10 * this.unitPrice + (this.weight - 10) * this.additionalPrice;
+    } else {
+      return this.weight * this.unitPrice;
+    }
+  }
+}
 
-console.log(p1);
-p1.name = 'will';
-console.log(p1);
+const s1 = new StandardPackage(10, 5, 3);
+s1.printPackage();

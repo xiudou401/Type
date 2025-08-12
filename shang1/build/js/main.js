@@ -166,19 +166,37 @@ const walk = (str) => {
 // const p1 = new Person('Eason', 5, '32414123412341234');
 // console.log(p1.getPrivateInfo());
 // console.log(p1.getFullInfo());
-class Person {
-    name;
-    age;
-    IdCard;
-    constructor(name, age, IdCard) {
-        this.name = name;
-        this.age = age;
-        this.IdCard = IdCard;
+// class Person {
+//   constructor(
+//     public name: string,
+//     public readonly age: number,
+//     private IdCard: string
+//   ) {}
+// }
+// const p1 = new Person('eason', 5, 'asdfasdfasdf1213');
+// console.log(p1);
+// p1.name = 'will';
+// console.log(p1);
+class Package {
+    weight;
+    constructor(weight) {
+        this.weight = weight;
+    }
+    printPackage() {
+        console.log(`the parcel is ${this.weight} kg, the fee is ${this.calculate()} dollars`);
     }
 }
-const p1 = new Person('eason', 5, 'asdfasdfasdf1213');
-console.log(p1);
-p1.name = 'will';
-console.log(p1);
+class StandardPackage extends Package {
+    unitPrice;
+    constructor(weight, unitPrice) {
+        super(weight);
+        this.unitPrice = unitPrice;
+    }
+    calculate() {
+        return this.weight * this.unitPrice;
+    }
+}
+const s1 = new StandardPackage(10, 5);
+s1.printPackage();
 export {};
 //# sourceMappingURL=main.js.map
