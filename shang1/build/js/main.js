@@ -76,6 +76,57 @@ const walk = (str) => {
 // const src = [1, 2, 3];
 // const dst = [0];
 // src.forEach((el) => dst.push(el));
+// class Person {
+//   name: string;
+//   age: number;
+//   constructor(name: string, age: number) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   speak() {
+//     console.log(`My name is ${this.name}, ${this.age} years old`);
+//   }
+// }
+// const p1 = new Person('will', 18);
+// console.log(p1);
+// p1.speak();
+// class Student extends Person {
+//   grade: string;
+//   constructor(name: string, age: number, grade: string) {
+//     super(name, age);
+//     this.grade = grade;
+//   }
+//   override speak() {
+//     console.log(`${this.name} says I am ${this.age}`);
+//   }
+//   study() {
+//     console.log(`my name is ${this.name} and loves study`);
+//   }
+// }
+// const s1 = new Student('Eason', 5, 'year 11');
+// console.log(s1);
+// s1.study();
+// s1.speak();
+// class Person {
+//   public name: string;
+//   public age: number;
+//   constructor(name: string, age: number) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   public speak() {
+//     console.log(`My name is ${this.name}, ${this.age} years old`);
+//   }
+// }
+// class Student extends Person {
+//   study() {
+//     console.log(`${this.name} loves study`);
+//   }
+// }
+// const p1 = new Person('eason', 5);
+// p1.name;
+// p1.age;
+// p1.speak();
 class Person {
     name;
     age;
@@ -83,29 +134,23 @@ class Person {
         this.name = name;
         this.age = age;
     }
-    speak() {
-        console.log(`My name is ${this.name}, ${this.age} years old`);
+    getDetails() {
+        return `my name is ${this.name} and i am ${this.age}`;
+    }
+    introduce() {
+        console.log(this.getDetails());
     }
 }
-const p1 = new Person('will', 18);
-console.log(p1);
-p1.speak();
+// const p1 = new Person('eason', 5);
+// p1.getDetails()
+// p1.introduce();
 class Student extends Person {
-    grade;
-    constructor(name, age, grade) {
-        super(name, age);
-        this.grade = grade;
-    }
-    speak() {
-        console.log(`${this.name} says I am ${this.age}`);
-    }
     study() {
-        console.log(`my name is ${this.name} and loves study`);
+        this.introduce();
+        console.log(`${this.name} is at school`);
     }
 }
-const s1 = new Student('Eason', 5, 'year 11');
-console.log(s1);
+const s1 = new Student('Eason', 5);
 s1.study();
-s1.speak();
 export {};
 //# sourceMappingURL=main.js.map
