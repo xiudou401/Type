@@ -127,30 +127,58 @@ const walk = (str) => {
 // p1.name;
 // p1.age;
 // p1.speak();
+// class Person {
+//   constructor(protected name: string, protected age: number) {}
+//   protected getDetails() {
+//     return `my name is ${this.name} and i am ${this.age}`;
+//   }
+//   introduce() {
+//     console.log(this.getDetails());
+//   }
+// }
+// // const p1 = new Person('eason', 5);
+// // p1.getDetails()
+// // p1.introduce();
+// class Student extends Person {
+//   study() {
+//     this.introduce();
+//     console.log(`${this.name} is at school`);
+//   }
+// }
+// const s1 = new Student('Eason', 5);
+// s1.study();
+// class Person {
+//   constructor(
+//     public name: string,
+//     public age: number,
+//     private IDcard: string
+//   ) {}
+//   getPrivateInfo() {
+//     return `you id is ${this.IDcard}`;
+//   }
+//   getInfo() {
+//     return `name is ${this.name}, age is ${this.age}`;
+//   }
+//   getFullInfo() {
+//     return this.getInfo() + ', ' + this.getPrivateInfo();
+//   }
+// }
+// const p1 = new Person('Eason', 5, '32414123412341234');
+// console.log(p1.getPrivateInfo());
+// console.log(p1.getFullInfo());
 class Person {
     name;
     age;
-    constructor(name, age) {
+    IdCard;
+    constructor(name, age, IdCard) {
         this.name = name;
         this.age = age;
-    }
-    getDetails() {
-        return `my name is ${this.name} and i am ${this.age}`;
-    }
-    introduce() {
-        console.log(this.getDetails());
+        this.IdCard = IdCard;
     }
 }
-// const p1 = new Person('eason', 5);
-// p1.getDetails()
-// p1.introduce();
-class Student extends Person {
-    study() {
-        this.introduce();
-        console.log(`${this.name} is at school`);
-    }
-}
-const s1 = new Student('Eason', 5);
-s1.study();
+const p1 = new Person('eason', 5, 'asdfasdfasdf1213');
+console.log(p1);
+p1.name = 'will';
+console.log(p1);
 export {};
 //# sourceMappingURL=main.js.map
