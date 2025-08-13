@@ -237,32 +237,51 @@ const walk = (str: Direction) => {
 // p1.name = 'will';
 // console.log(p1);
 
-abstract class Package {
-  constructor(public weight: number) {}
-  abstract calculate(): number;
-  printPackage() {
-    console.log(
-      `the parcel is ${this.weight} kg, the fee is ${this.calculate()} dollars`
-    );
-  }
+// abstract class Package {
+//   constructor(public weight: number) {}
+//   abstract calculate(): number;
+//   printPackage() {
+//     console.log(
+//       `the parcel is ${this.weight} kg, the fee is ${this.calculate()} dollars`
+//     );
+//   }
+// }
+
+// class StandardPackage extends Package {
+//   constructor(
+//     weight: number,
+//     public unitPrice: number,
+//     public additionalPrice: number
+//   ) {
+//     super(weight);
+//   }
+//   calculate(): number {
+//     if (this.weight > 10) {
+//       return 10 * this.unitPrice + (this.weight - 10) * this.additionalPrice;
+//     } else {
+//       return this.weight * this.unitPrice;
+//     }
+//   }
+// }
+
+// const s1 = new StandardPackage(10, 5, 3);
+// s1.printPackage();
+
+interface PersonInterface {
+  name: string;
+  age: number;
+  speak(n: number): void;
 }
 
-class StandardPackage extends Package {
-  constructor(
-    weight: number,
-    public unitPrice: number,
-    public additionalPrice: number
-  ) {
-    super(weight);
-  }
-  calculate(): number {
-    if (this.weight > 10) {
-      return 10 * this.unitPrice + (this.weight - 10) * this.additionalPrice;
-    } else {
-      return this.weight * this.unitPrice;
+class Person implements PersonInterface {
+  constructor(public name: string, public age: number) {}
+  speak(n: number): void {
+    for (let i = 0; i < n; i++) {
+      console.log(`My name is ${this.name}, I'm ${this.age} years old`);
     }
   }
 }
 
-const s1 = new StandardPackage(10, 5, 3);
-s1.printPackage();
+const p1 = new Person('eason', 18);
+
+p1.speak(4);
