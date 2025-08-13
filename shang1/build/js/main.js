@@ -29,20 +29,14 @@ var Direction;
 const walk = (str) => {
     console.log(str);
 };
-class Person {
-    name;
-    age;
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    speak(n) {
-        for (let i = 0; i < n; i++) {
-            console.log(`My name is ${this.name}, I'm ${this.age} years old`);
-        }
-    }
-}
-const p1 = new Person('eason', 18);
-p1.speak(4);
+const user = {
+    name: 'will',
+    gender: 'male',
+    age: 18,
+    run(n) {
+        console.log(`${this.name} run ${n} kms`);
+    },
+};
+user.run(5);
 export {};
 //# sourceMappingURL=main.js.map

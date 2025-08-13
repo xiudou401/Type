@@ -267,21 +267,39 @@ const walk = (str: Direction) => {
 // const s1 = new StandardPackage(10, 5, 3);
 // s1.printPackage();
 
-interface PersonInterface {
+// interface PersonInterface {
+//   name: string;
+//   age: number;
+//   speak(n: number): void;
+// }
+
+// class Person implements PersonInterface {
+//   constructor(public name: string, public age: number) {}
+//   speak(n: number): void {
+//     for (let i = 0; i < n; i++) {
+//       console.log(`My name is ${this.name}, I'm ${this.age} years old`);
+//     }
+//   }
+// }
+
+// const p1 = new Person('eason', 18);
+
+// p1.speak(4);
+
+interface UserInterface {
   name: string;
-  age: number;
-  speak(n: number): void;
+  readonly gender: string;
+  age?: number;
+  run: (n: number) => void;
 }
 
-class Person implements PersonInterface {
-  constructor(public name: string, public age: number) {}
-  speak(n: number): void {
-    for (let i = 0; i < n; i++) {
-      console.log(`My name is ${this.name}, I'm ${this.age} years old`);
-    }
-  }
-}
+const user: UserInterface = {
+  name: 'will',
+  gender: 'male',
+  age: 18,
+  run(n) {
+    console.log(`${this.name} run ${n} kms`);
+  },
+};
 
-const p1 = new Person('eason', 18);
-
-p1.speak(4);
+user.run(5);
